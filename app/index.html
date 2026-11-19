@@ -1,23 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cover Snap</title>
-<link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANEL HEAT — GTA-style cover maker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="app">
-  <section class="controls">
-    <h1>Cover Snap</h1>
-    <p>A photo and a caption, made into a square cover.</p>
-    <label>Photo <input id="photo" type="file" accept="image/*"></label>
-    <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
-    <button id="export" type="button">Export PNG 1080 x 1080</button>
-    <p id="status" role="status"></p>
-  </section>
-  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
-</main>
-<script type="module" src="./src/main.js"></script>
+    <div class="app-container">
+        <header>
+            <h1>PANEL HEAT — GTA-style cover maker</h1>
+        </header>
+        <main>
+            <div class="controls">
+                <section>
+                    <h3>Photos</h3>
+                    <input type="file" id="photo-input" multiple accept="image/*">
+                    <div class="samples">
+                        <button id="sample-pier">Sample Pier</button>
+                        <button id="sample-boulevard">Sample Blvd</button>
+                    </div>
+                    <div id="photo-list" class="photo-list"></div>
+                </section>
+
+                <section>
+                    <h3>Layout</h3>
+                    <div class="btn-group">
+                        <button id="layout-duo">Duo</button>
+                        <button id="layout-trio">Trio</button>
+                        <button id="layout-quad">Quad</button>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Grade</h3>
+                    <div class="btn-group">
+                        <button id="grade-sunset">Sunset</button>
+                        <button id="grade-neon">Neon</button>
+                        <button id="grade-noir">Noir</button>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Caption</h3>
+                    <input type="text" id="caption1" placeholder="Caption 1 (Main)">
+                    <input type="text" id="caption2" placeholder="Caption 2 (Sub)">
+                </section>
+
+                <section>
+                    <h3>Panel</h3>
+                    <label for="zoom-slider">Zoom</label>
+                    <input type="range" id="zoom-slider" min="1" max="3" step="0.01" value="1">
+                </section>
+
+                <section>
+                    <h3>Export</h3>
+                    <div class="export-group">
+                        <button id="export-1080x1080">1080x1080</button>
+                        <button id="export-1080x1350">1080x1350</button>
+                        <button id="export-1920x1080">1920x1080</button>
+                    </div>
+                </section>
+            </div>
+            <div class="preview-area">
+                <canvas id="preview" width="960" height="960"></canvas>
+                <p class="hint">Click a panel to select, drag to move focus.</p>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="src/main.js"></script>
 </body>
 </html>
