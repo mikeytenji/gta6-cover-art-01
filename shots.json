@@ -1,5 +1,6 @@
 [
-  { "name": "1-cover.jpg", "query": "?shot=cover&photo=pier&caption=Sunset%20Heist", "w": 1080, "h": 1080 },
-  { "name": "2-editor.jpg", "query": "?shot=editor&photo=boulevard&caption=Boulevard%20Queen", "w": 1280, "h": 720 },
-  { "name": "3-cover.jpg", "query": "?shot=cover&photo=boulevard&caption=Boulevard%20Queen", "w": 1080, "h": 1080 }
+  { "name": "1-cover.jpg", "query": "?shot=cover&photo=pier&layout=quad&grade=sunset&size=wide&caption=Panel%20Heat&caption2=Marina%20Vice", "w": 1280, "h": 720 },
+  { "name": "2-editor.jpg", "query": "?shot=editor&photo=boulevard&layout=trio&grade=sunset&caption=Boulevard%20Queen", "w": 1280, "h": 720 },
+  { "name": "3-cover.jpg", "query": "?shot=cover&photo=boulevard&layout=trio&grade=neon&size=square&caption=Boulevard%20Queen&caption2=Neon%20District", "w": 1024, "h": 1024 },
+  { "name": "4-cover.jpg", "query": "?shot=cover&photo=pier&layout=duo&grade=sunset&size=tall&caption=Sunset%20Heist&caption2=Panel%20Heat", "w": 1024, "h": 1280 }
 ]

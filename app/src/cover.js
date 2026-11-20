@@ -34,12 +34,13 @@ export function drawCover(ctx, W, H, state) {
         // Vignette
         applyVignette(ctx, panel.rect);
 
+        // Inner white border
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+        ctx.lineWidth = Math.max(1, Math.round(W * (4 / 1080)));
+        ctx.stroke();
+
         ctx.restore();
     });
-
-    // Draw gutters (already handled by clipping and black background, but let's ensure separation)
-    // Actually, the black background is the gutter if we leave space.
-    // The getPanels function should return polygons that leave gaps.
 
     // Draw Captions
     drawCaptions(ctx, W, H, state);
@@ -170,13 +171,13 @@ function drawCaptions(ctx, W, H, state) {
     if (caption2) {
         const size2 = Math.round(H * 0.045);
         ctx.font = `900 ${size2}px "Arial Narrow", Impact, sans-serif`;
-        drawText(ctx, caption2.toUpperCase(), W / 2, H * 0.815, accent, H * 0.005, H * 0.003);
+        drawText(ctx, caption2.toUpperCase(), W / 2, H * 0.815, accent, H * 0.008, H * 0.003);
     }
 
     if (caption1) {
         const size1 = Math.round(H * 0.085);
         ctx.font = `900 ${size1}px "Arial Narrow", Impact, sans-serif`;
-        drawText(ctx, caption1.toUpperCase(), W / 2, H * 0.90, 'white', H * 0.012, H * 0.006);
+        drawText(ctx, caption1.toUpperCase(), W / 2, H * 0.90, 'white', H * 0.016, H * 0.006);
     }
 }
 
